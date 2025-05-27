@@ -5,6 +5,18 @@
             return a+b;
         }
 
+for Interest
+ [WebMethod]
+        public double CalculateCompoundInterest(double principal, double rate, int timesCompounded, int years)
+        {
+            // Convert rate from percentage to decimal
+            double decimalRate = rate / 100;
+
+            // Apply compound interest formula
+            double amount = principal * Math.Pow((1 + decimalRate / timesCompounded), timesCompounded * years);
+
+            return amount;
+        }
 run service get url add service to reference add url
 create web form 
 
