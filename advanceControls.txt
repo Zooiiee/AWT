@@ -1,0 +1,170 @@
+webform1.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="AdvanceControls.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="FORM"></asp:Label>
+            <br />
+            <br />
+            <asp:Label ID="Label2" runat="server" ClientIDMode="Static" Font-Bold="True" Font-Size="Large" Text="Username :"></asp:Label>
+&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="name" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Label ID="Label3" runat="server" ClientIDMode="Static" Font-Bold="True" Font-Size="Large" Text="Email :"></asp:Label>
+&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="email" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Label ID="Label4" runat="server" ClientIDMode="Static" Font-Bold="True" Font-Size="Large" Text="City :"></asp:Label>
+&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="city" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Label ID="Label5" runat="server" ClientIDMode="Static" Font-Bold="True" Font-Size="Large" Text="Select Document to Upoad:"></asp:Label>
+&nbsp;&nbsp;&nbsp;
+            <asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:ListItem>Aadhar Card</asp:ListItem>
+                <asp:ListItem>Voter ID</asp:ListItem>
+                <asp:ListItem>Drivers Liscence</asp:ListItem>
+                <asp:ListItem>Passport</asp:ListItem>
+            </asp:DropDownList>
+            <br />
+            <br />
+            <asp:FileUpload ID="FileUpload1" runat="server" />
+            <br />
+            <br />
+            <asp:Button ID="Button1" runat="server" BackColor="#CCCCCC" BorderColor="Black" Font-Bold="True" Height="37px" OnClick="Button1_Click" PostBackUrl="~/WebForm2.aspx" Text="SUBMIT" Width="93px" />
+        </div>
+    </form>
+</body>
+</html>
+
+
+webform2.aspx 
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm2.aspx.cs" Inherits="AdvanceControls.WebForm2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Label ID="Label5" runat="server" Font-Bold="True" Font-Size="XX-Large" ForeColor="#660033" Text="Welcome"></asp:Label>
+&nbsp;
+            <asp:Label ID="name" runat="server" Font-Bold="True" Font-Size="XX-Large" ForeColor="#660033"></asp:Label>
+&nbsp;<br />
+            <br />
+            <asp:Label ID="Label6" runat="server" Font-Bold="True" Font-Size="X-Large" Font-Underline="True" Text="Your Details:"></asp:Label>
+            <br />
+            <asp:Label ID="Label7" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Email - "></asp:Label>
+&nbsp;
+            <asp:Label ID="email" runat="server" Font-Bold="True" Font-Size="X-Large"></asp:Label>
+            <br />
+            <asp:Label ID="Label9" runat="server" Font-Bold="True" Font-Size="X-Large" Text="City - "></asp:Label>
+            <asp:Label ID="city" runat="server" Font-Bold="True" Font-Size="X-Large"></asp:Label>
+            <br />
+            <br />
+            <br />
+            <asp:Label ID="Label10" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Samsung Galaxy [AD]"></asp:Label>
+            <br />
+            <asp:AdRotator ID="AdRotator1" runat="server" DataSourceID="XmlDataSource1" Height="500px" />
+            <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/AdFile.xml"></asp:XmlDataSource>
+        </div>
+    </form>
+</body>
+</html>
+
+adFile.xml
+<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+	<Ad>
+		<ImageUrl>s1.jpg</ImageUrl>
+		<NavigateUrl>https://unsplash.com/s/photos/samsung-phone</NavigateUrl>
+		<AlternateText>Galaxy S22 Ultra</AlternateText>
+		<Impressions>20</Impressions>
+		<Keyword>Sansumg</Keyword>
+	</Ad>
+	<Ad>
+		<ImageUrl>s2.jpg</ImageUrl>
+		<NavigateUrl>https://www.pexels.com/search/samsung%20phone/</NavigateUrl>
+		<AlternateText>Free Samsung Phone Photos</AlternateText>
+		<Impressions>20</Impressions>
+		<Keyword>Sansumg</Keyword>
+	</Ad>
+	<Ad>
+		<ImageUrl>s3.jpg</ImageUrl>
+		<NavigateUrl>https://www.samsung.com/uk/mobile-phone-buying-guide/samsung-phone-ranges-explained/</NavigateUrl>
+		<AlternateText>Free Samsung Phone Photos</AlternateText>
+		<Impressions>20</Impressions>
+		<Keyword>Sansumg</Keyword>
+	</Ad>
+	<Ad>
+		<ImageUrl>s4.jpg</ImageUrl>
+		<NavigateUrl>https://news.samsung.com/us/galaxy-z-fold3-5g-galaxy-z-flip3-5g-unpacked-2021-next-mobile-innovation/</NavigateUrl>
+		<AlternateText>Galaxy Z Fold3 5G</AlternateText>
+		<Impressions>20</Impressions>
+		<Keyword>Sansumg</Keyword>
+	</Ad>
+	<Ad>
+		<ImageUrl>s5.jpg</ImageUrl>
+		<NavigateUrl>https://news.samsung.com/in/introducing-the-galaxy-z-fold2-change-the-shape-of-the-future</NavigateUrl>
+		<AlternateText>Galaxy Z Fold2: Change the Shape of the Future</AlternateText>
+		<Impressions>20</Impressions>
+		<Keyword>Sansumg</Keyword>
+	</Ad>
+	<Ad>
+		<ImageUrl>s3.png</ImageUrl>
+		<NavigateUrl>https://unsplash.com/s/photos/samsung-phone</NavigateUrl>
+		<AlternateText>Samsung Launches Galaxy A53 5G with 64MP OIS Camera</AlternateText>
+		<Impressions>20</Impressions>
+		<Keyword>Sansumg</Keyword>
+	</Ad>
+</Advertisements>
+
+
+webform1.aspx.cs
+  protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (FileUpload1.HasFile)
+            {
+                string folderPath = Server.MapPath("~/UploadedFiles/");
+
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
+                string fileName = Path.GetFileName(FileUpload1.FileName);
+                FileUpload1.SaveAs(folderPath + fileName);
+            }
+        }
+
+webform2.aspx.cs
+ protected void Page_Load(object sender, EventArgs e)
+        {
+            if(PreviousPage!=null)
+            {
+                TextBox tb1 = new TextBox();
+                tb1 = (TextBox)(PreviousPage.FindControl("name"));
+                name.Text = tb1.Text;
+
+                TextBox tb2 = new TextBox();
+                tb2 = (TextBox)(PreviousPage.FindControl("email"));
+                email.Text = tb2.Text;
+
+                TextBox tb3 = new TextBox();
+                tb3 = (TextBox)(PreviousPage.FindControl("city"));
+                city.Text=tb3.Text;
+            }
+        }
