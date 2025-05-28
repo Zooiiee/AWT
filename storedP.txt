@@ -1,0 +1,47 @@
+table
+CREATE TABLE Users
+(
+    Id INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    Password NVARCHAR(100),
+    Email NVARCHAR(100)
+);
+
+procedure
+CREATE PROCEDURE InsertUser
+    @Id INT,
+    @Name NVARCHAR(100),
+    @Password NVARCHAR(100),
+    @Email NVARCHAR(100)
+AS
+BEGIN
+    INSERT INTO Users (Id, Name, Password, Email)
+    VALUES (@Id, @Name, @Password, @Email)
+END
+
+button click 
+ protected void Button1_Click(object sender, EventArgs e)
+        {
+            int Id = Convert.ToInt32(id.Text);
+            string Name = name.Text;
+            string Password = password.Text;
+            string emailid = email.Text;
+
+            string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\zoyaj\OneDrive\Pictures\Documents\DB_Data.mdf;Integrated Security=True;Connect Timeout=30";
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("InsertUser", con)) // Replace "InsertUser" with the name of your stored procedure
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Id", Id);
+                    cmd.Parameters.AddWithValue("@Name", Name);
+                    cmd.Parameters.AddWithValue("@Password", Password);
+                    cmd.Parameters.AddWithValue("@Email", emailid);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Record Inserted!!!!')", true);
+        }
