@@ -45,3 +45,13 @@ button click
             }
             ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Record Inserted!!!!')", true);
         }
+
+
+CREATE PROCEDURE GetUserById
+    @Id INT
+AS
+BEGIN
+    SELECT Id, Name, Password, Email
+    FROM Users
+    WHERE Id = @Id;
+END
