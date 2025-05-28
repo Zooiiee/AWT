@@ -1,0 +1,18 @@
+Web Config 
+
+Add CODE: 
+
+	<appSettings>
+		<add key="ValidationSettings:UnobtrusiveValidationMode" value="None" />
+	</appSettings>
+
+
+Custom Validator code for checkboxex
+
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = (hobbies.SelectedIndex >-1);
+        }
+
+
+
